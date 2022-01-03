@@ -24,9 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-^8sw20l(f+fcw3qnp&p8g2z-)u(&i8#9k5t=@ma!&crosqdkk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
+#ALLOWED_HOSTS = ['localhost','127.0.0.1','lrdr1952.pythonanywhere.com']
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','lrdr1952.pythonanywhere.com']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,7 +87,7 @@ WSGI_APPLICATION = 'webempresa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 
@@ -127,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Media config
 MEDIA_URL = '/media/'
@@ -147,7 +150,7 @@ CKEDITOR_CONFIGS = {
 }
 
 # Email config
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'e15b227a5f8221'
-EMAIL_HOST_PASSWORD = '0a34e431e11014'
-EMAIL_PORT = '2525'
+# EMAIL_HOST = 'smtp.mailtrap.io'
+# EMAIL_HOST_USER = 'e15b227a5f8221'
+# EMAIL_HOST_PASSWORD = '0a34e431e11014'
+# EMAIL_PORT = '2525'
