@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Category(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, verbose_name="Nombre")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(auto_now=True, verbose_name="Fecha de edición")
@@ -18,6 +19,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200, verbose_name="Título")
     content = models.TextField(verbose_name="Contenido")
     published = models.DateTimeField(verbose_name="Fecha de publicación", default=now)

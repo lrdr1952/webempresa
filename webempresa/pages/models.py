@@ -3,6 +3,7 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Page(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(verbose_name="Título", max_length=200)
     content = RichTextField(verbose_name="Contenido")
     order = models.SmallIntegerField(verbose_name="Orden", default=0)
